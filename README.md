@@ -10,7 +10,8 @@ This also provides a structured and easily parseable document for further use wi
 
 # So What?
 
-Grab a template below, add the TLDR; to the bottom of the list, and send a PR with your favourite paper.
+Grab a template below, add the TLDR; to the bottom of the [list](https://github.com/yobibyte/ml-drug-discovery-tldrs/blob/main/tldrs.md), and send a PR with your favourite paper.
+Another way to help is to refine an existing TLDR. If you feel like refining some entries, go for it!
 
 
 # Template
