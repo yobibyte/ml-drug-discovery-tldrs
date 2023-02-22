@@ -45,7 +45,7 @@ Chemical Synthesis can be a bottleneck in molecular drug discovery (in particula
 - TLDR ID: 3
 - *Julia Westermayr, Joe Gilkes, Rhyan Barrett, Reinhard J. Maurer*
 - Nature (2023)
-- [https://www.nature.com/articles/nature25978](https://www.nature.com/articles/s43588-022-00391-1)
+- [https://www.nature.com/articles/s43588-022-00391-1](https://www.nature.com/articles/s43588-022-00391-1)
 
 ### What?
 - Biasing a auto-regressive SchNet (Schütt et al., 2017) model, through repeated retraining, to generate molecules that are "viable" (low energy gap, low ioinisation energy, low synthetic complexity) and satisfy many chemical property requirements simultaneously.
