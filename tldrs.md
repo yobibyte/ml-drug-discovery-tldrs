@@ -40,3 +40,30 @@ Chemical Synthesis can be a bottleneck in molecular drug discovery (in particula
 - Paved the way for modern synthesis planning to become part of in-silico discovery pipelines.
 - An early demonstration of RL-based planning in a fully learned world model.
 ---
+
+## High-throughput property-driven generative design of functional organic molecules
+- TLDR ID: 3
+- *Julia Westermayr, Joe Gilkes, Rhyan Barrett, Reinhard J. Maurer*
+- Nature (2023)
+- [https://www.nature.com/articles/s43588-022-00391-1](https://www.nature.com/articles/s43588-022-00391-1)
+
+### What?
+- Biasing a auto-regressive SchNet (Schütt et al., 2017) model, through repeated retraining, to generate molecules that are "viable" (low energy gap, low ioinisation energy, low synthetic complexity) and satisfy many chemical property requirements simultaneously.
+- Idea:
+  1. Initialise a database of known/valid drug molecules and train G-SchNet on it
+  2. Generate candidated molecules (~340K in the paper), filter each of them using pretrained models to predict different properties (synthetic complexity, energy gap, etc.). These pretrained models were trained on other datasets to predict specific properties. Think of the ensemble as a mixture of experts making a final decision whether or not a generated molecule is valid or not.
+  3. Out of all valid molecules, merge the 
+  4. Retrain the same G-SchNet on this new, updated dataset. Repeat process (~10 loops from the paper, each taking ~2 days)
+
+In doing so, the generated molecules will look increasingly similar to real-world molecules with ideal properties.
+
+### Why?
+High-throughput drug molecule screening is often tedious given the time-consuming nature of DFT calculations. By generating high-quality candidate molecules that satisfy many desired properties, the search space is significantly reduced, meaning lesser, more efficient wet-lab testing.
+
+### So What?
+- Demonstrates that explicit graph topology and structural descriptors (SMILES strings) are not needed to generate high-fidelity, high-potential molecules
+- Screens many thousands of drug molecules in a matter of days in contrast to traditional screening approaches taking >20,000 days on average
+
+> **Note:** However, it seems like a computationally expensive process with many loops of the retraining process
+
+---
