@@ -50,10 +50,10 @@ Chemical Synthesis can be a bottleneck in molecular drug discovery (in particula
 ### What?
 - Biasing a auto-regressive SchNet (Schütt et al., 2017) model, through repeated retraining, to generate molecules that are "viable" (low energy gap, low ioinisation energy, low synthetic complexity) and satisfy many chemical property requirements simultaneously.
 - Idea:
-  1. Initialise a database of known/valid drug molecules and train G-SchNet on it
-  2. Generate candidated molecules (~340K in the paper), filter each of them using pretrained models to predict different properties (synthetic complexity, energy gap, etc.). These pretrained models were trained on other datasets to predict specific properties. Think of the ensemble as a mixture of experts making a final decision whether or not a generated molecule is valid or not.
-  3. Out of all valid molecules, merge the 
-  4. Retrain the same G-SchNet on this new, updated dataset. Repeat process (~10 loops from the paper, each taking ~2 days)
+  1. Initialise a database of known/valid drug molecules and train G-SchNet on it.
+  2. Generate candidated molecules (~340K in the paper), filter each of them using pretrained models to predict different properties (synthetic complexity, energy gap, etc.). These pretrained models were trained on other datasets to predict specific properties. Think of the ensemble as a mixture of experts making a final decision whether or not a generated molecule is valid.
+  3. Out of all valid molecules, merge the new collection of generated molecules with the original database. This is to bias the network into increasingly produce molecules with ideal properties.
+  4. Retrain the same G-SchNet on this new, updated dataset. Repeat process (~10 loops from the paper, each taking ~2 days).
 
 In doing so, the generated molecules will look increasingly similar to real-world molecules with ideal properties.
 
