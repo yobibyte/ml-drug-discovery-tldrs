@@ -67,3 +67,21 @@ High-throughput drug molecule screening is often tedious given the time-consumin
 > **Note:** However, it seems like a computationally expensive process with many loops of the retraining process
 
 ---
+
+## Drug Synergistic Combinations Predictions via Large-Scale Pre-Training and Graph Structure Learning
+- TLDR ID: 4
+- *Zhihang Hu, Qinze Yu, Yucheng Guo, Taifeng Wang, Irwin King, Xin Gao, Le Song, and Yu Li*
+- arXiv (2023)
+- https://arxiv.org/abs/2301.05931
+### What?
+- Predict whether two drugs are synergistic.
+- Idea:
+  - Authors used pre-trained models to encode proteins and molecules
+  - The models were fine-tuned in a self-supervised manner on biological knowledge graph (PrimeKG)
+  - Then, the authors used active learning to fine-tune for the second time and evaluate their models on DrugComb dataset
+### Why?
+Drug combinations may be more effective than single drugs. However, identifying novel drug combinations through wet-lab experiments is resource intensive due to the vast combinatorial search space
+## So What?
+- SOTA on several datasets (DrugComb, AstraZeneca)
+- Multimodal data helps on homogeneous benchmarks
+- Using pretrained models is much more effective than train from scratch.
